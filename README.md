@@ -1,20 +1,14 @@
 \# AWS Terraform Remote State Project
 
+##Overview
 
+In this project I moved Terraform state from local storage to a remote S3 backend and added DynamoDB for state locking.
 
-\## Overview
-
-
-
-In this project I configured Terraform to use remote state storage instead of local state. The state file is stored in an S3 bucket and state locking is handled using a DynamoDB table.
-
-
-
-This setup is commonly used in team environments to allow multiple engineers to work on the same infrastructure safely without corrupting the Terraform state file.
+I did this because storing Terraform state locally is risky. If multiple people run Terraform at the same time, the state file can get corrupted. Using S3 and DynamoDB allows teams to work on the same infrastructure safely.
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
@@ -34,7 +28,7 @@ This project provisions the following AWS resources:
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
@@ -58,7 +52,7 @@ Using S3 and DynamoDB solves these problems by storing the state remotely and lo
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
@@ -70,7 +64,7 @@ This project uses an S3 backend with DynamoDB locking. After creating the backen
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
@@ -100,7 +94,7 @@ terraform plan
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
@@ -112,7 +106,7 @@ This project helped me understand how Terraform state works, why remote state is
 
 
 
-\---------------------------------------------------------------------------------------------------------------------------------------
+\-------------------------------------------------------------------------------------------
 
 
 
