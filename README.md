@@ -1,6 +1,6 @@
 \# AWS Terraform Remote State Project
 
-##Overview
+## Overview
 
 In this project I moved Terraform state from local storage to a remote S3 backend and added DynamoDB for state locking.
 
